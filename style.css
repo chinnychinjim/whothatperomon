@@ -247,12 +247,18 @@ body {
   overflow-y: auto;
   border: 8px solid #0f380f;
   background-color: #8bac0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .invite-image-container img {
   width: 100%;
   height: auto;
   display: block;
+  image-rendering: auto; /* Restores high-quality smooth rendering for modern graphics */
+  image-rendering: -webkit-optimize-contrast; /* Keeps text crisp in Safari/Chrome */
+  margin: 0 auto;
 }
 
 .close-btn {
