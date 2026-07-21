@@ -24,7 +24,7 @@ pokeballWrapper.addEventListener('click', () => {
 
   // Step 3: Open Invitation Modal & Update Dialog
   setTimeout(() => {
-    dialogText.textContent = "GOTCHA! INVITATION WAS OPENED!";
+    dialogText.textContent = "YOU'RE INVITED!";
     modalOverlay.classList.add('active');
   }, 800);
 });
@@ -46,7 +46,7 @@ function closeModal() {
     pokeball.classList.remove('wobble-anim');
     flashOverlay.classList.remove('flash-anim');
     buttonInner.classList.remove('btn-glow');
-    dialogText.textContent = "A WILD INVITATION APPEARED!";
+    dialogText.textContent = "CLICK ME!";
     isOpening = false;
   }, 300);
 }
