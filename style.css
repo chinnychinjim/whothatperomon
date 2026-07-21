@@ -16,12 +16,12 @@ body {
   padding: 20px;
 }
 
-/* Extra Large Game Boy Screen Frame (560px x 620px -> 680px x 740px) */
+/* Extra Large Game Boy Screen Frame */
 .gb-screen {
   background-color: #9bbc0f;
   width: 680px;
   height: 740px;
-  border: 24px solid #0f380f; /* Extra thick retro bezel */
+  border: 24px solid #0f380f;
   border-radius: 20px;
   box-shadow: 0 22px 0 #000;
   padding: 28px;
@@ -70,7 +70,7 @@ body {
   box-shadow: 0 -14px 0 #8bac0f, 0 14px 0 #306230;
 }
 
-/* Extra Large Pixel Pokeball (140px -> 170px) */
+/* Extra Large Pixel Pokeball */
 .pokeball-wrapper {
   cursor: pointer;
   z-index: 2;
@@ -148,7 +148,7 @@ body {
 }
 
 #dialogText {
-  font-size: 1.3rem; /* Scaled text size for readability */
+  font-size: 1.3rem;
   line-height: 1.8;
   color: #0f380f;
   word-break: break-word;
@@ -196,7 +196,7 @@ body {
   background-color: #0f380f !important;
 }
 
-/* Scaled Up Modal Popup (580px -> 680px max width) */
+/* Expanded Modal & Image Container */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -211,6 +211,7 @@ body {
   pointer-events: none;
   transition: opacity 0.2s ease;
   z-index: 10;
+  padding: 20px;
 }
 
 .modal-overlay.active {
@@ -222,8 +223,12 @@ body {
   background-color: #9bbc0f;
   border: 14px solid #0f380f;
   padding: 28px;
-  max-width: 90%;
-  width: 680px;
+  max-width: 95vw;
+  width: 780px; /* Increased modal width from 680px to 780px */
+  max-height: 90vh; /* Keeps modal inside viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   position: relative;
   box-shadow: 0 14px 0 #000;
@@ -232,14 +237,16 @@ body {
 .modal-title {
   font-size: 1.8rem;
   color: #0f380f;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
+/* Enlarged Image Container with Scroll Support */
 .invite-image-container {
   width: 100%;
+  max-height: 70vh; /* Allows tall images to fit nicely without overflowing screen */
+  overflow-y: auto;
   border: 8px solid #0f380f;
   background-color: #8bac0f;
-  overflow: hidden;
 }
 
 .invite-image-container img {
@@ -264,7 +271,7 @@ body {
   color: #306230;
 }
 
-/* Responsive adjustment for small/mobile screens */
+/* Responsive adjustment for small screens */
 @media (max-width: 720px) {
   .gb-screen {
     width: 95vw;
@@ -280,5 +287,10 @@ body {
   .pokeball {
     width: 120px;
     height: 120px;
+  }
+
+  .modal-content {
+    width: 95vw;
+    padding: 16px;
   }
 }
