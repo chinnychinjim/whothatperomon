@@ -1,10 +1,3 @@
-/* Game Boy 4-Color Palette:
-   Lightest: #9bbc0f (Screen BG)
-   Light:    #8bac0f
-   Dark:     #306230
-   Darkest:  #0f380f (Main Text & Outlines)
-*/
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,15 +15,15 @@ body {
   color: #0f380f;
 }
 
-/* Game Boy Screen Frame */
+/* Scaled Up Game Boy Screen Frame (340px x 380px -> 450px x 500px) */
 .gb-screen {
   background-color: #9bbc0f;
-  width: 340px;
-  height: 380px;
-  border: 12px solid #0f380f;
-  border-radius: 8px;
-  box-shadow: 0 10px 0 #000;
-  padding: 12px;
+  width: 450px;
+  height: 500px;
+  border: 16px solid #0f380f; /* Thicker border */
+  border-radius: 12px;
+  box-shadow: 0 14px 0 #000;
+  padding: 18px;
   position: relative;
 }
 
@@ -69,14 +62,14 @@ body {
 
 .grass-line {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   width: 100%;
-  height: 4px;
+  height: 6px;
   background-color: #306230;
-  box-shadow: 0 -8px 0 #8bac0f, 0 8px 0 #306230;
+  box-shadow: 0 -10px 0 #8bac0f, 0 10px 0 #306230;
 }
 
-/* Pixel Pokeball */
+/* Larger Pixel Pokeball (80px -> 110px) */
 .pokeball-wrapper {
   cursor: pointer;
   z-index: 2;
@@ -88,20 +81,20 @@ body {
 }
 
 .pokeball {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   background-color: #8bac0f;
   border-radius: 50%;
-  border: 6px solid #0f380f;
+  border: 8px solid #0f380f;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 0 #306230;
+  box-shadow: 0 6px 0 #306230;
 }
 
 .pokeball-top {
   width: 100%;
   height: 50%;
-  background-color: #306230; /* Dark shade for red top on Game Boy */
+  background-color: #306230;
 }
 
 .pokeball-bottom {
@@ -112,9 +105,9 @@ body {
 
 .pokeball-band {
   position: absolute;
-  top: calc(50% - 4px);
+  top: calc(50% - 5px);
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: #0f380f;
 }
 
@@ -123,10 +116,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   background-color: #9bbc0f;
-  border: 5px solid #0f380f;
+  border: 6px solid #0f380f;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -134,37 +127,37 @@ body {
 }
 
 .pokeball-inner-btn {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   background-color: #9bbc0f;
-  border: 2px solid #0f380f;
+  border: 3px solid #0f380f;
   border-radius: 50%;
 }
 
-/* Retro Game Boy Dialog Box */
+/* Larger Retro Game Boy Dialog Box */
 .dialog-box {
   background-color: #9bbc0f;
-  border: 6px solid #0f380f;
-  padding: 12px;
+  border: 8px solid #0f380f;
+  padding: 16px;
   height: 35%;
   position: relative;
   display: flex;
   align-items: flex-start;
-  box-shadow: inset 0 0 0 2px #8bac0f;
+  box-shadow: inset 0 0 0 3px #8bac0f;
 }
 
 #dialogText {
-  font-size: 0.7rem;
-  line-height: 1.5;
+  font-size: 0.9rem; /* Increased font size */
+  line-height: 1.6;
   color: #0f380f;
   word-break: break-word;
 }
 
 .dialog-arrow {
   position: absolute;
-  bottom: 6px;
-  right: 8px;
-  font-size: 0.6rem;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.8rem;
   color: #0f380f;
   animation: blink 0.8s infinite;
 }
@@ -202,7 +195,7 @@ body {
   background-color: #0f380f !important;
 }
 
-/* Modal Popup */
+/* Scaled Up Modal Popup (360px -> 480px width) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -226,24 +219,24 @@ body {
 
 .modal-content {
   background-color: #9bbc0f;
-  border: 8px solid #0f380f;
-  padding: 16px;
+  border: 10px solid #0f380f;
+  padding: 20px;
   max-width: 90%;
-  width: 360px;
+  width: 480px;
   text-align: center;
   position: relative;
-  box-shadow: 0 8px 0 #000;
+  box-shadow: 0 10px 0 #000;
 }
 
 .modal-title {
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #0f380f;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .invite-image-container {
   width: 100%;
-  border: 4px solid #0f380f;
+  border: 5px solid #0f380f;
   background-color: #8bac0f;
   overflow: hidden;
 }
@@ -256,12 +249,12 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: #0f380f;
   cursor: pointer;
 }
